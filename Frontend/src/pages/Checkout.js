@@ -146,7 +146,7 @@ const Checkout = () => {
       key: "rzp_test_HSSeDI22muUrLR", // Enter the Key ID generated from the Dashboard
       amount: amount,
       currency: currency,
-      name: "Cart's corner",
+      name: "Snapcart",
       description: "Test Transaction",
 
       order_id: order_id,

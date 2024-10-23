@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Marquee from "react-fast-marquee";
-import BlogCard from "../components/BlogCard";
+// import BlogCard from "../components/BlogCard";
 import ProductCard from "../components/ProductCard";
-import SpecialProduct from "../components/SpecialProduct";
+// import SpecialProduct from "../components/SpecialProduct";
 import Container from "../components/Container";
 import { services } from "../utils/Data";
 import prodcompare from "../images/prodcompare.svg";
@@ -14,7 +14,7 @@ import watch2 from "../images/watch-1.avif";
 import addcart from "../images/add-cart.svg";
 import view from "../images/view.svg";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllBlogs } from "../features/blogs/blogSlice";
+// import { getAllBlogs } from "../features/blogs/blogSlice";
 import moment from "moment";
 import { getAllProducts } from "../features/products/productSlilce";
 import ReactStars from "react-rating-stars-component";
@@ -22,19 +22,19 @@ import { addToWishlist } from "../features/products/productSlilce";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 
 const Home = () => {
-  const blogState = useSelector((state) => state?.blog?.blog);
+  // const blogState = useSelector((state) => state?.blog?.blog);
   const productState = useSelector((state) => state?.product?.product);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   useEffect(() => {
-    getblogs();
+    // getblogs();
     getProducts();
   }, []);
-  const getblogs = () => {
-    dispatch(getAllBlogs());
-  };
+  // const getblogs = () => {
+    // dispatch(getAllBlogs());
+  // };
 
   const getProducts = () => {
     dispatch(getAllProducts());
@@ -349,7 +349,7 @@ const Home = () => {
         </div>
       </Container>
 
-      <Container class1="special-wrapper py-5 home-wrapper-2">
+      {/* <Container class1="special-wrapper py-5 home-wrapper-2">
         <div className="row">
           <div className="col-12">
             <h3 className="section-heading">Special Products</h3>
@@ -376,7 +376,7 @@ const Home = () => {
               }
             })}
         </div>
-      </Container>
+      </Container> */}
       <Container class1="popular-wrapper py-5 home-wrapper-2">
         <div className="row">
           <div className="col-12">
@@ -492,7 +492,7 @@ const Home = () => {
           </div>
         </div>
       </Container>
-
+{/* 
       <Container class1="blog-wrapper py-5 home-wrapper-2">
         <div className="row">
           <div className="col-12">
@@ -519,7 +519,7 @@ const Home = () => {
               }
             })}
         </div>
-      </Container>
+      </Container> */}
     </>
   );
 };

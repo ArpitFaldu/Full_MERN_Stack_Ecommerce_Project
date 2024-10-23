@@ -21,7 +21,7 @@ import { toast } from "react-toastify";
 import { addProdToCart, getUserCart } from "../features/user/userSlice";
 
 const SingleProduct = () => {
-  const [color, setColor] = useState(null);
+  const [color, setColor] = useState("black");
 
   const [quantity, setQuantity] = useState(1);
   const [alreadyAdded, setAlreadyAdded] = useState(false);
@@ -52,7 +52,8 @@ const SingleProduct = () => {
 
   const uploadCart = () => {
     if (color === null) {
-      toast.error("Please choose Color");
+      color="black";
+      // toast.error("Please choose Color");
     } else {
       dispatch(
         addProdToCart({
@@ -72,7 +73,7 @@ const SingleProduct = () => {
 
     img: productState?.images[0].url
       ? productState?.images[0].url
-      : "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg?cs=srgb&dl=pexels-fernando-arcos-190819.jpg&fm=jpg",
+      : "Full_MERN_Stack_Ecommerce_Project\Frontend\src\images\wireless_mouse.jpg",
   };
 
   const [orderedProduct, setorderedProduct] = useState(true);
@@ -144,7 +145,7 @@ const SingleProduct = () => {
               {productState?.images.map((item, index) => {
                 return (
                   <div>
-                    <img src={item?.url} className="img-fluid" alt="" />
+                    <img src="Full_MERN_Stack_Ecommerce_Project\Frontend\src\images\wireless_mouse.jpg" className="img-fluid" alt="Not found" />
                   </div>
                 );
               })}
@@ -211,6 +212,7 @@ const SingleProduct = () => {
                     </span>
                   </div>
                 </div> */}
+                
                 {alreadyAdded === false && (
                   <div className="d-flex gap-10 flex-column mt-2 mb-3">
                     <h3 className="product-heading">Color :</h3>
@@ -247,8 +249,6 @@ const SingleProduct = () => {
                   >
                     <button
                       className="button border-0"
-                      // data-bs-toggle="modal"
-                      // data-bs-target="#staticBackdrop"
                       type="button"
                       onClick={() => {
                         alreadyAdded ? navigate("/cart") : uploadCart();

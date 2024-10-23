@@ -64,7 +64,7 @@ const OurStore = () => {
                 <ul className="ps-0">
                   <a
                     className="ps-0"
-                    href="/product"
+                    href="/"
                     style={{ color: "var(--color-777777)" }}
                   >
                     All
